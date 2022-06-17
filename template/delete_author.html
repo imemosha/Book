@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form action="{% url 'delete_author' id=data.id %}" method="POST">
+        {% csrf_token %}
+        Are you sure you want to delete? {{ data.title }}
+
+        <button type="submit"> Delete </button>
+        <a href="{% url 'list_author' %}"> Cancel</a>
+    </form>
+
+</body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form method="post" action="{% url 'add_article'  %}" enctype="multipart/form-data">
+    {% csrf_token %}
+
+    {{ form }}<br>
+    {% for data in theme%}
+        <input type="checkbox" name="theme" value= "{{data.id}}">
+        {{data.name}}<br>
+
+    {% endfor %}
+
+    <button type="submit"> Submit </button>
+
+</form>
+</body>
+</html>
